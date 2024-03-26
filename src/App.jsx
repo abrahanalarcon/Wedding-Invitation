@@ -1,12 +1,17 @@
-import './App.css'
+import Header from './components/Header'
+import CountdownTimer from './components/CountdownTimer';
+
 
 function App() {
   
 
   return (
     <div>
-      <h1>Hola Mundo</h1>
+      <Header/>
+      <CountdownTimer/>
     </div>
+      
+    
   )
 }
 
