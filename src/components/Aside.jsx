@@ -5,20 +5,16 @@ import '../components/normalize.css';
 function LocationRedirectButton() {
     const [loading, setLoading] = useState(false);
 
-    function redirectToLocation() {
-        setLoading(true);
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                const latitude = position.coords.latitude;
-                const longitude = position.coords.longitude;
-                const locationURL = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`;
-                window.location.href = locationURL;
-            });
-        } else {
-            alert("La geolocalización no es compatible con este navegador.");
-            setLoading(false);
+    function LocationRedirectButton() {
+        const [loading, setLoading] = useState(false);
+    
+        function redirectToLocation() {
+            setLoading(true);
+            const latitude = 18.428264; // Coordenada de latitud del Metro Country Club en Juan Dolio
+            const longitude = -69.438246; // Coordenada de longitud del Metro Country Club en Juan Dolio
+            const locationURL = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`;
+            window.location.href = locationURL;
         }
-    }
 
     return (
         <button onClick={redirectToLocation} disabled={loading}  className="boton boton--secundario">
@@ -46,9 +42,6 @@ const Aside = () => {
                     <h4 className="no-margin">Recepcion</h4>
                     <p className="widget-curso__label">Villa: 
                         <span className="widget-curso__info"> Metro ContryClub</span>
-                    </p>
-                    <p className="widget-curso__label">Hora de Inicio: 
-                        <span className="widget-curso__info"> 3:30pm</span>
                     </p>
                     <LocationRedirectButton />
                     
