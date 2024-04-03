@@ -21,7 +21,7 @@ const Header = () => {
         </div>
 
         <div className="header__texto">
-            <h2 className="no-margin">Eres invitado</h2>
+            <h2 className="no-margin">Estas invitado</h2>
             <p className="no-margin">A compatir con nosotros este marivolloso momento</p>
         </div>
     </div>
