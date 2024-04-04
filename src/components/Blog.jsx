@@ -1,8 +1,20 @@
+import { useState } from 'react';
 import '../components/Header.css'
 import '../components/normalize.css'
 import ImagenBlog from '../img/blog5.webp'
+import Modal from './Modal';
 
 const Blog = () => {
+    const [modalOpen, setModalOpen] = useState(false);
+
+    const handleOpenModal = () => {
+        setModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setModalOpen(false);
+    };
+
     return (
         <>
             <main className="blog">
@@ -18,10 +30,11 @@ const Blog = () => {
                     <div className="entrada__contenido">
                         <h4 className="no-margin">Comparte con nosotros</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, rerum, reprehenderit consequatur perferendis officia, vitae fuga animi temporibus itaque atque reiciendis ea excepturi! Molestias aperiam fugiat deleniti laudantium atque numquam?</p>
-                        <a href="entrada.html" className="boton boton--primario">Sesion de fotos</a>
+                        <button  onClick={handleOpenModal} className="boton boton--primario">Sesion de fotos</button>
                     </div>
                 </article>
             </main>
+            {modalOpen && <Modal closeModal={handleCloseModal} />}
         </>
     );
 };

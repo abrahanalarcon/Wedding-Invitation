@@ -1,13 +1,13 @@
 import Header from './components/Header'
 import CountdownTimer from './components/CountdownTimer';
 import Blog from './components/Blog';
-import './components/Header.css'
+import './components/css/Header.css'
 import Aside from './components/Aside';
 
 
 function App() {
-  
 
+  
   return (
     <>
       <Header/>
