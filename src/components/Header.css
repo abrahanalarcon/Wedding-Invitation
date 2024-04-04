@@ -183,6 +183,7 @@ img {
 .widget-curso__label,
 .widget-curso__info {
     font-size: 2rem;
+    text-align: center;
 }
 
 .footer {

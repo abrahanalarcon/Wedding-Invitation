@@ -5,8 +5,7 @@ import '../components/normalize.css';
 function LocationRedirectButton() {
     const [loading, setLoading] = useState(false);
 
-    function LocationRedirectButton() {
-        const [loading, setLoading] = useState(false);
+   
     
         function redirectToLocation() {
             setLoading(true);
