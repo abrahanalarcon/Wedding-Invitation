@@ -1,52 +1,39 @@
 import '../components/modal.css'
 import CerrarBtn from '../img/cerrar.svg'
-import React, { useEffect, useRef, useState } from 'react'
-import { data } from '../assets/data'
+import  { useEffect } from 'react';
+import Swiper from 'swiper';
+import '../components/swiper-bundle.min.css'; // Importa los estilos de Swiper
+
 
 const Modal = ({closeModal}) => {
-  const listRef = useRef();
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-
-  useEffect(() => {
-    const listNode = listRef.current;
-    const imgNode = listNode.querySelectorAll("li > img")[currentIndex];
-
-    if (imgNode) {
-      imgNode.scrollIntoView({
-        behavior: "smooth"
-      });
-    }
-
-  }, [currentIndex]);
-
-
-  const scrollToImage = (direction) => {
-    if (direction === 'prev') {
-      setCurrentIndex(curr => {
-        const isFirstSlide = currentIndex === 0;
-        return isFirstSlide ? 0 : curr - 1;
-      })
-    } else {
-      const isLastSlide = currentIndex === data.length - 1;
-      if (!isLastSlide) {
-        setCurrentIndex(curr => curr + 1);
-      }
-    }
-  }
-
-  const goToSlide = (slideIndex) => {
-    setCurrentIndex(slideIndex);
-  }
   
-
-    
-
+   useEffect(() => {
+      const swiper = new Swiper(".swiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 3,
+        speed: 600,
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        },
+        loop: true,
+      });
+  
+      // Importante: destruir el Swiper cuando el componente se desmonte
+      return () => {
+        swiper.destroy();
+      };
+    }, []); // 
   
 
    
   return (
-   <>
+   
         <div className="modal">
          <div className="cerrar-modal">
             <img
@@ -55,38 +42,34 @@ const Modal = ({closeModal}) => {
                onClick={closeModal}
             />
          </div>
-         <div className="main-container">
-            <div className="slider-container">
-               <div className='leftArrow' onClick={() => scrollToImage('prev')}>&#10092;</div>
-               <div className='rightArrow' onClick={() => scrollToImage('next')}>&#10093;</div>
-               <div className="container-images">
-               <ul className='list_li' ref={listRef}>
-               {
-               data.map((item) => {
-                return <li className='list' key={item.id}>
-                <img className="imageCarousel" src={item.imgUrl} width={500} height={280} />
-                </li>
-                 })
-                }
-               </ul>
-               </div>
-               <div className="dots-container">
-               {
-               data.map((_, idx) => (
-               <div key={idx}
-                className={`dot-container-item ${idx === currentIndex ? "active" : ""}`}
-                onClick={() => goToSlide(idx)}>
-                &#9865;
-               </div>))
-               }
-              </div>
-             </div>
-         </div >
-        
-        </div>
+         < div className='content_swip'>
+          <div className="swiper">
+           <div className="swiper-wrapper">
+            <div className="swiper-slide">
+              <img src="https://i.pinimg.com/736x/89/1e/b5/891eb59b6f15098cb7516b287f0d619f.jpg" alt="imagen 1"/>
+            </div>
+            <div className="swiper-slide">
+              <img 
+              src="https://i.pinimg.com/736x/6f/b5/bd/6fb5bd2c93235a36e38e0afdeac3528f.jpg"alt="imagen 1"/>
+            </div>
+            <div className="swiper-slide">
+              <img src="https://i.pinimg.com/originals/75/b4/32/75b432d2ffb2ad1df3a60390f9577c2a.png" alt="imagen 1"/>
+            </div>
+            <div className="swiper-slide">
+              <img src="https://gregdotel.com/wp-content/uploads/2019/05/fotografo-paola-robert-bodas-sesion-novios-jardin-botanico-nacional-santo-domingo-republica-dominicana7.jpg" alt="imagen 1"/>
+            </div>
+            <div className="swiper-slide">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU7MLMdJlhoB6lj8xW0LtUbw0bPya7Hs86hQGr8mkfSaw2cDjCAF5R11jYsO2Dv0uzh6I&usqp=CAU" alt="imagen 1"/>
+            </div>
+         </div>
+          </div>
+         
+         
+         </div>
+         </div>
    
    
-   </>
+   
   )
 }
 
