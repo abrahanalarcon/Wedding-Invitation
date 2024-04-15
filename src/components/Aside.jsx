@@ -47,8 +47,9 @@ const Aside = () => {
                 </li>
                 <li className="widget-curso">
                     <p className="widget-curso__label">No olvides confirmar tu cita</p>
-                    <a href="entrada.html" className="boton boton--secundario">Confirmar con el novio</a>
-                    <a href="entrada.html" className="boton boton--secundario">Confirmar con la novia</a>
+                    <a href="https://api.whatsapp.com/send?phone=18299688949&text=¡Hola! Me gustaría confirmar con el novio." className="boton boton--secundario">Confirmar con el novio</a>
+                    <a href="https://api.whatsapp.com/send?phone=18496375882&text=¡Hola! Me gustaría confirmar con el novia." className="boton boton--secundario">Confirmar con el novia</a>
+                    
                 </li>
             </ul>
         </aside>

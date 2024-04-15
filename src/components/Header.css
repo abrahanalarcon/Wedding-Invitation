@@ -62,7 +62,10 @@ img {
 /** Header **/
 .header {
     background-image: url(../img/banner1.jpg);
+    
 }
+
+
 
 .header {
     height: 60rem;
@@ -142,7 +145,7 @@ img {
     margin-bottom: 2rem;
     border: none;
     width: 50%;
-    margin-left: 10.5rem;
+    margin-left: 8rem;
 }
 
 @media (min-width: 768px) {
