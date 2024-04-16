@@ -30,7 +30,7 @@ const Blog = () => {
                     <div className="entrada__contenido">
                         <h4 className="no-margin">Comparte con nosotros</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, rerum, reprehenderit consequatur perferendis officia, vitae fuga animi temporibus itaque atque reiciendis ea excepturi! Molestias aperiam fugiat deleniti laudantium atque numquam?</p>
-                        <button  onClick={handleOpenModal} className="boton boton--primario">Sesion de fotos</button>
+                        <button  onClick={handleOpenModal} className="boton boton--primario">Ver Sesion de fotos</button>
                     </div>
                 </article>
             </main>
