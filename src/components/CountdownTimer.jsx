@@ -33,7 +33,7 @@ const CountdownTimer = () => {
   }
 
   return (
-    <div className="time">
+    <div className="time" id="time">
       <h1>Calendario-Dias Restantes</h1>
       <div className='container'>
         <div className='days block'>{timeLeft.days}<br />Dias</div>

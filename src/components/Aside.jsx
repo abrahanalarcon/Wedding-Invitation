@@ -24,7 +24,7 @@ function LocationRedirectButton() {
 
 const Aside = () => {
     return (
-        <aside className="sidebar">
+        <aside className="sidebar" id="lugar">
             <h3>Ubicación</h3>
 
             <ul className="cursos no-padding">

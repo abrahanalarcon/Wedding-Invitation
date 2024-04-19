@@ -17,7 +17,7 @@ const Blog = () => {
 
     return (
         <>
-            <main className="blog">
+            <main className="blog" id="blog">
                 <h3>Nuestra Boda</h3>
                 <article className="entrada">
                     <div className="entrada__imagen">
