@@ -12,11 +12,7 @@ const Header = () => {
                     <h1 className="logo__nombre no-margin centrar-texto">Nuestra <span className="logo__bold">Boda</span></h1>
                 </a>
 
-                <nav className="navegacion">
-                    <a href="nosotros.html" className="navegacion__enlace">Nosotros</a>
-                    <a href="cursos.html" className="navegacion__enlace">Lugar</a>
-                    <a href="contacto.html" className="navegacion__enlace">Contacto</a>
-                </nav>
+               
             </div>
         </div>
 
