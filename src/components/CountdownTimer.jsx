@@ -34,6 +34,7 @@ const CountdownTimer = () => {
 
   return (
     <div className="time">
+      <h1>Calendario-Dias Restantes</h1>
       <div className='container'>
         <div className='days block'>{timeLeft.days}<br />Dias</div>
         <div className='hours block'>{timeLeft.hours}<br />Horas</div>
