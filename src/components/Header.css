@@ -1,6 +1,6 @@
 :root {
-    --fuenteHeading: 'PT Sans', sans-serif;
-    --fuenteParrafos: 'Open Sans', sans-serif;
+    --fuenteHeading: 'Great Vibes', cursive;
+    --fuenteParrafos: 'PT Sans', sans-serif;
 
     --primario: #784D3C;
     --gris: #e1e1e1;
@@ -135,7 +135,7 @@ img {
 }
 .boton {
     display: block;
-    font-family: var(--fuenteHeading);
+    font-family: var(--fuenteParrafos);
     color: var(--blanco);
     text-align: center;
     padding: 1rem 3rem;
