@@ -18,8 +18,10 @@ function App() {
        <Aside/>
       </div>
       <CountdownTimer/>
+      <div className="contenedor contenido-principal">
       <Aside2/>
       <Blog2/>
+      </div>
     </>
       
     
