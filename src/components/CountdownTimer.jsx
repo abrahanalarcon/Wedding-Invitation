@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
-import "../components/Temp.css";
-import '../components/normalize.css'
 
 
 const CountdownTimer = () => {
-
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
@@ -16,7 +13,8 @@ const CountdownTimer = () => {
   });
 
   function calculateTimeLeft() {
-    const countDownDate = new Date(2024, 5, 22).getTime();
+    // Establece la fecha y hora objetivo para el 11 de octubre de 2024 a las 12:00 PM
+    const countDownDate = new Date(2024, 9, 11, 12, 0, 0).getTime();
     const now = new Date().getTime();
     const distance = countDownDate - now;
 
@@ -34,9 +32,9 @@ const CountdownTimer = () => {
 
   return (
     <div className="time" id="time">
-      <h1>Calendario-Dias Restantes</h1>
+      <h1>Días Restantes</h1>
       <div className='container'>
-        <div className='days block'>{timeLeft.days}<br />Dias</div>
+        <div className='days block'>{timeLeft.days}<br />Días</div>
         <div className='hours block'>{timeLeft.hours}<br />Horas</div>
         <div className='minutes block'>{timeLeft.minutes}<br />Minutos</div>
         <div className='seconds block'>{timeLeft.seconds}<br />Segundos</div>
@@ -46,3 +44,4 @@ const CountdownTimer = () => {
 };
 
 export default CountdownTimer;
+
