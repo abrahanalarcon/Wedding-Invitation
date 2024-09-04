@@ -139,31 +139,43 @@ img {
     border: none;
     margin-bottom: 0;
 }
+/* Define la animación de temblor */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/* Aplica el efecto de temblor al botón */
 .boton {
-    display: block;
-    font-family: var(--fuenteBotones);
-    color: var(--blanco);
-    text-align: center;
-    padding: 1rem 3rem;
-    font-size: 1rem;
-    text-transform: uppercase;
-    font-weight: 800;
-    margin-bottom: 2rem;
-    border: none;
-    width: 50%;
-    margin-left: 9.5rem;
-    border-radius:2rem;
+  display: block;
+  font-family: var(--fuenteBotones);
+  color: var(--blanco);
+  text-align: center;
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  border: none;
+  width: 50%;
+  margin-left: 9.5rem;
+  border-radius: 2rem;
+  transition: all 0.3s ease; /* Transición suave para cambios */
 }
 
-@media (min-width: 768px) {
-    .boton {
-        display: inline-block;
-
-    }
-}
 .boton:hover {
-    cursor: pointer;
+  cursor: pointer;
+  animation: shake 0.5s; /* Aplica la animación de temblor */
 }
+
+/* Añade un efecto adicional si quieres que la animación se repita mientras mantienes el hover */
+.boton:focus {
+  animation: shake 0.5s;
+}
+
 .boton--primario {
     background-color: var(--primario);
 }
@@ -785,3 +797,24 @@ img {
   [hidden] {
     display: none;
   }
+
+  /* Animación de fade-in desde abajo */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Clase para aplicar la animación */
+.animate-fadeInUp {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+
+
